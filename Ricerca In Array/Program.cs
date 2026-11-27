@@ -1,12 +1,12 @@
 ﻿int j = 0, sce = 0, pos = -1, nOcc = 0;
-int[] v = new int[Random.Shared.Next(1, 101)];
+int[] v = new int[Random.Shared.Next(1, 101)], posOcc = new int[v.Length]; //array con indice casuale tra 1 e 100 compresi
 bool c = false;
-for (int i = 0; i < v.Length; i++)
+for (int i = 0; i < v.Length; i++) //carica casualmente l'array
 {
     v[i] = Random.Shared.Next(1, 101);
-    Console.WriteLine(v[i]); //roba debugging
+    //Console.WriteLine(v[i]); //roba debugging
 }
-do
+do //selezione scelte
 {
     Console.WriteLine("Quale tipo di ricerca vuoi fare?\n[1]True/False\n[2]Posizione\n[3]Numero Occorenze\n[4]Posizione Occorenze");
     sce = Convert.ToInt16(Console.ReadLine());
@@ -42,7 +42,7 @@ if (sce == 1 || sce == 2) //scelte 1 e 2(insieme perche usano entrambe il while)
     {
         if (pos != -1)
         {
-            Console.WriteLine($"La posizione è {pos}");
+            Console.WriteLine($"La posizione dell'elemento è {pos}");
         }
         else
         {
@@ -66,13 +66,24 @@ else //scelte 3 e 4(insieme perche usano entrambe il for)
             }    
             else
             {
-                Console.WriteLine(k);
+                posOcc[k] = k;
             }
         }
     }
     if(sce == 3)
     {
-        Console.WriteLine($"Il numero {n} appare {nOcc} volte");
+        if (nOcc != 0)
+        {
+            Console.WriteLine($"L'elemento {n} appare {nOcc} volte");
+        }
+        else
+        {
+            Console.WriteLine("Il numero non è presente");
+        }
+    }
+    else
+    {
+
     }
 }
         
