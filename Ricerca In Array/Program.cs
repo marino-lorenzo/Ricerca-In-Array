@@ -1,10 +1,10 @@
-﻿int ind = Random.Shared.Next(1, 101), j = 0, sce = 0, pos = -1, nOcc = 0;
-int[] v = new int[ind];
+﻿int j = 0, sce = 0, pos = -1, nOcc = 0;
+int[] v = new int[Random.Shared.Next(1, 101)];
 bool c = false;
 for (int i = 0; i < v.Length; i++)
 {
     v[i] = Random.Shared.Next(1, 101);
-    Console.WriteLine(v[i]);
+    Console.WriteLine(v[i]); //roba debugging
 }
 do
 {
